@@ -14,132 +14,215 @@
 
    <section>
       <div class="container">
-         <h2 id="my-title">My shopping cart</h2>
-         <div class="cart">
-            <div class="col-md-12 col-lg-10 mx-auto">
-               <div class="cart-item">
-                  <div class="row">
-                     <div class="col-md-7 center-item">
-                        <img src="images/product-1.png" alt="">
-                        <h5>iPhone 11 128GB Black</h5>
-                     </div>
 
-                     <div class="col-md-5 center-item">
-                        <div class="input-group number-spinner">
-                           <button onclick="decreasePhoneCount()" class="btn btn-default"><i class="fas fa-minus"></i></button>
-                           <input onchange="updatePhonePrice()" id="phone-count" type="number" min="0" class="form-control text-center" value="1">
-                           <button onclick="increasePhoneCount()" class="btn btn-default"><i class="fas fa-plus"></i></button>
+         <div id="login-section">
+            <h1>Welcome to Pioneer Bank</h1>
+            <section class="login-form">
+               <div class="row">
+                  <div class="col-md-6">
+                     <div class="laptop-img">
+                        <img src="images/laptop-image.png" alt="">
+                     </div>
+                  </div>
+
+                  <div class="col-md-6">
+                     <div class="login-area">
+                        <form action="">
+                           <h4>Member Login</h4>
+                           <input type="email" placeholder="Email">
+                           <input type="password" placeholder="password">
+                        </form>
+                        <button id="login">Login</button>
+                     </div>
+                  </div>
+               </div>
+            </section>
+         </div>
+
+         <div id="shopping-cart-sec">
+            <h2 id="my-title">My shopping cart</h2>
+            <div class="cart">
+               <div class="col-md-12 col-lg-10 mx-auto">
+                  <div class="cart-item">
+                     <div class="row">
+                        <div class="col-md-7 center-item">
+                           <img src="images/product-1.png" alt="">
+                           <h5>iPhone 11 128GB Black</h5>
                         </div>
-                        <h5 id="phone-price">$1219</h5>
-                        <img src="images/remove.png" alt="" class="remove-item">
-                     </div>
-                  </div>
-               </div>
 
-               <div class="cart-item">
-                  <div class="row">
-                     <div class="col-md-7 center-item mx-auto">
-                        <img src="images/product-2.png" alt="">
-                        <h5>iPhone 11 Silicone Case - Black</h5>
-                     </div>
-                     <div class="col-md-5 center-item">
-                        <div class="input-group number-spinner">
-                           <button onclick="decreaseCaseCount()" class="btn btn-default"><i class="fas fa-minus"></i></button>
-                           <input onchange="updateCasePrice()" id="case-count" type="number" min="0" class="form-control text-center" value="1">
-                           <button onclick="increaseCaseCount()" class="btn btn-default"><i class="fas fa-plus"></i></button>
-
+                        <div class="col-md-5 center-item">
+                           <div class="input-group number-spinner">
+                              <button onclick="handleProductChange('phone', false)" class="btn btn-default"><i
+                                    class="fas fa-minus"></i></button>
+                              <input id="phone-count" type="number" min="0" class="form-control text-center" value="0">
+                              <button onclick="handleProductChange('phone', true)" class="btn btn-default"><i
+                                    class="fas fa-plus"></i></button>
+                           </div>
+                           <h5 id="phone-price">$1219</h5>
+                           <img src="images/remove.png" alt="" class="remove-item">
                         </div>
-                        <h5 id="case-price">$59</h5>
-                        <img src="images/remove.png" alt="" class="remove-item">
                      </div>
                   </div>
-               </div>
 
-               <div class="cart-item">
-                  <div class="row">
+                  <div class="cart-item">
+                     <div class="row">
+                        <div class="col-md-7 center-item mx-auto">
+                           <img src="images/product-2.png" alt="">
+                           <h5>iPhone 11 Silicone Case - Black</h5>
+                        </div>
+                        <div class="col-md-5 center-item">
+                           <div class="input-group number-spinner">
+                              <button onclick="handleProductChange('case', false)" class="btn btn-default"><i
+                                    class="fas fa-minus"></i></button>
+                              <input id="case-count" type="number" min="0" class="form-control text-center" value="0">
+                              <button onclick="handleProductChange('case', true)" class="btn btn-default"><i
+                                    class="fas fa-plus"></i></button>
 
-                     <div class="col-md-8">
-                        <h5>Subtotal: </h5>
-                        <h5>Tax:</h5>
-                        <h5>Total:</h5>
-                     </div>
-
-                     <div class="col-md-4 status">
-                        <h5 id="total-price">$1,278</h5>
-                        <h5 id="tax-amount">$0</h5>
-                        <h5 id="grand-total">$1,278</h5>
+                           </div>
+                           <h5 id="case-price">$59</h5>
+                           <img src="images/remove.png" alt="" class="remove-item">
+                        </div>
                      </div>
                   </div>
-               </div>
-               <div class="col-md-12 pt-4 pb-4">
-                  <button type="button" class="btn btn-success check-out">Check Out</button>
+
+                  <div class="cart-item">
+                     <div class="row">
+                        <div class="col-md-7 center-item mx-auto">
+                           <img src="images/laptop-img.png" alt="">
+                           <h5>Macbook Pro 2015 Laptop</h5>
+                        </div>
+                        <div class="col-md-5 center-item">
+                           <div class="input-group number-spinner">
+                              <button onclick="handleProductChange('laptop', false)" class="btn btn-default"><i
+                                    class="fas fa-minus"></i></button>
+                              <input id="laptop-count" type="number" min="0" class="form-control text-center" value="0">
+                              <button onclick="handleProductChange('laptop', true)" class="btn btn-default"><i
+                                    class="fas fa-plus"></i></button>
+
+                           </div>
+                           <h5 id="laptop-price">$8000</h5>
+                           <img src="images/remove.png" alt="" class="remove-item">
+                        </div>
+                     </div>
+                  </div>
+
+                  <div class="cart-item">
+                     <div class="row">
+                        <div class="col-md-7 center-item mx-auto">
+                           <img src="images/watch.jpg" alt="">
+                           <h5>Watch Wrist - Man</h5>
+                        </div>
+                        <div class="col-md-5 center-item">
+                           <div class="input-group number-spinner">
+                              <button onclick="handleProductChange('watch', false)" class="btn btn-default"><i
+                                    class="fas fa-minus"></i></button>
+                              <input id="watch-count" type="number" min="0" class="form-control text-center" value="0">
+                              <button onclick="handleProductChange('watch', true)" class="btn btn-default"><i
+                                    class="fas fa-plus"></i></button>
+
+                           </div>
+                           <h5 id="watch-price">$60</h5>
+                           <img src="images/remove.png" alt="" class="remove-item">
+                        </div>
+                     </div>
+                  </div>
+
+                  <div class="cart-item">
+                     <div class="row">
+
+                        <div class="col-md-8">
+                           <h5>Subtotal: </h5>
+                           <h5>Tax:</h5>
+                           <h5>Total:</h5>
+                        </div>
+
+                        <div class="col-md-4 status">
+                           <h5 id="total-price">$1,278</h5>
+                           <h5 id="tax-amount">$0</h5>
+                           <h5 id="grand-total">$1,278</h5>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="col-md-12 pt-4 pb-4">
+                     <button type="button" class="btn btn-success check-out">Check Out</button>
+                  </div>
                </div>
             </div>
          </div>
       </div>
    </section>
    <script>
-      function increasePhoneCount(){
-         const phoneCountElement = document.getElementById('phone-count');
-         const phoneCount = phoneCountElement.value;
-         const newPhoneCount = parseInt(phoneCount) + 1;
-         phoneCountElement.value = newPhoneCount;
-         updatePhonePrice();
-      }
-      function decreasePhoneCount(){
-         const phoneCountElement = document.getElementById('phone-count');
-         const phoneCount = phoneCountElement.value;
-         const newPhoneCount = parseInt(phoneCount) - 1;
-         phoneCountElement.value = newPhoneCount;
-         updatePhonePrice();
-      }
-      function updatePhonePrice(){
-         const phoneCountElement = document.getElementById('phone-count');
-         const phoneCount = phoneCountElement.value;
-         const phonePrice = parseInt(phoneCount) * 1219;
-         const phonePriceElement = document.getElementById('phone-price');
-         phonePriceElement.innerText = '$' + phonePrice;
-         updateTotalPrice();
-      }
-      function increaseCaseCount(){
-         const phoneCountElement = document.getElementById('case-count');
-         const phoneCount = phoneCountElement.value;
-         const newPhoneCount = parseInt(phoneCount) + 1;
-         phoneCountElement.value = newPhoneCount;
-         updateCasePrice();
-      }
-      function decreaseCaseCount(){
-         const phoneCountElement = document.getElementById('case-count');
-         const phoneCount = phoneCountElement.value;
-         const newPhoneCount = parseInt(phoneCount) - 1;
-         phoneCountElement.value = newPhoneCount;
-         updateCasePrice();
-      }
-      function updateCasePrice(){
-         const phoneCountElement = document.getElementById('case-count');
-         const phoneCount = phoneCountElement.value;
-         const phonePrice = parseInt(phoneCount) * 59;
-         const phonePriceElement = document.getElementById('case-price');
-         phonePriceElement.innerText = '$' + phonePrice;
-         updateTotalPrice();
+
+      // Login button 
+      document.getElementById('login').addEventListener('click', function () {
+         document.getElementById('login-section').style.display = 'none';
+         document.getElementById("shopping-cart-sec").style.display = "block";
+      });
+
+      function handleProductChange(product, isIncrease) {
+
+         let inputValue = document.getElementById(product + '-count');
+         const convertInputValue = parseFloat(inputValue.value);
+
+
+         let updatedInputvalue = convertInputValue;
+         if (isIncrease == false && convertInputValue > 0) {
+
+            updatedInputvalue = convertInputValue - 1;
+            inputValue.value = updatedInputvalue;
+         }
+         else if (isIncrease == true) {
+            updatedInputvalue = convertInputValue + 1;
+            inputValue.value = updatedInputvalue;
+         }
+         let totalPrice = 0;
+
+         if (product == 'phone') {
+            totalPrice = updatedInputvalue * 1219;
+         }
+         else if (product == 'case') {
+            totalPrice = updatedInputvalue * 59;
+         }
+         else if (product == 'laptop') {
+            totalPrice = updatedInputvalue * 8000;
+         }
+         else if (product == 'watch') {
+            totalPrice = updatedInputvalue * 60;
+         }
+         document.getElementById(product + '-price').innerText = '$' + totalPrice;
+
+         calculateTotal();
+
       }
 
-      function updateTotalPrice(){
-         const phoneCount = document.getElementById('phone-count').value;
-         const caseCount = document.getElementById('case-count').value;
-         const totalPrice = parseInt(phoneCount) * 1219 + parseInt(caseCount) * 59;
-         
-         const taxAmount = (totalPrice / 100 * 10).toFixed(2); 
-         console.log(totalPrice, taxAmount);
-         const grandTotal = totalPrice + parseFloat(taxAmount);
-         
-         const totalPriceElement = document.getElementById('total-price');
-         totalPriceElement.innerText = '$' +  totalPrice;
-         const taxElement = document.getElementById('tax-amount');
-         taxElement.innerText = '$' +  taxAmount;
-         const grandTotalElement = document.getElementById('grand-total');
-         grandTotalElement.innerText = '$' +  grandTotal;
+      function calculateTotal() {
+         const phone_Count = getInputValue('phone');
+         const case_Count = getInputValue('case');
+         const laptop_Count = getInputValue('laptop');
+         const watch_Count = getInputValue('watch');
+
+
+         const calculateTotalAmount = phone_Count * 1219 + case_Count * 59 + laptop_Count * 8000 + watch_Count * 60;
+
+         document.getElementById("total-price").innerText = '$' + calculateTotalAmount;
+
+         const tax = calculateTotalAmount * 0.1;
+         const roundTax = Math.round(tax);
+         document.getElementById("tax-amount").innerText = '$' + roundTax;
+
+         const grandTotal = calculateTotalAmount + roundTax;
+
+         document.getElementById("grand-total").innerText = '$' + grandTotal;
+
+
       }
+
+      function getInputValue(product) {
+         const productInput = document.getElementById(product + '-count');
+         const convertProductInput = parseFloat(productInput.value);
+         return convertProductInput;
+      }
+
    </script>
 </body>
 

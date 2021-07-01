@@ -1,8 +1,68 @@
 body{
-	background: #fff;
+    background-color: rgb(73, 73, 73);
+}
+#shopping-cart-sec{
+	display: none;
+}
+h2#my-title{
+	text-align: center;
+	margin-top: 50px;
+	font-weight: 600;
+	color: #fff;
+}
+#login-section h1{
+    color: #fff;
+    text-align: center;
+    margin-top: 60px;
+    font-weight: 600;
+}
+.login-form{
+    background: #fff;
+    padding: 100px 50px;
+    width: 80%;
+    margin: 0 auto;
+    margin-top: 4%;
+}
+.laptop-img{}
+.laptop-img img{
+    background-color: #ececec;
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    
+}
+.login-area{}
+.login-area h4{
+    font-size: 25px;
+    font-weight: 700;
+    padding-bottom: 25px;
+    text-align: center;
+}
+.login-area input{
+    width: 90%;
+    margin-bottom: 25px;
+    height: 40px;
+    border-radius: 20px;
+    border: none;
+    border: 1px solid #dedede;
+    padding: 0 20px;
+}
+.login-area button{
+    background: #11cd11;
+    color: #fff;
+    font-weight: 600;
+    font-size: 19px;
+    height: 45px;
+    border-radius: 20px;
+    border: none;
+    width: 90%;
+    border: 1px solid #dedede;
+	cursor: pointer;
+    
 }
 .cart{
-	margin: 100px 0;
+	margin-top: 50px;
+	margin-bottom: 80px;
 	background-color: #F6F5FA;;
 	padding: 60px 0;
 }
